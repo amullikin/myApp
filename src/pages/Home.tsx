@@ -18,12 +18,12 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
-        <IonInput value={input} onIonChange={(e: any) => setInput(e.target.value)}>
-
-        </IonInput>       
-        <IonButton routerLink="/example">
-          click :D
+        <ExploreContainer />      
+        <IonButton routerLink="/login">
+          click to login :D
+        </IonButton>
+        <IonButton routerLink="/register">
+          register ..
         </IonButton>
       </IonContent>
     </IonPage>
