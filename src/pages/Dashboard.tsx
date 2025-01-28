@@ -1,15 +1,22 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonButton } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 import React, { useState } from 'react';
+import { loginUser } from '../firebaseConfig'
 
-const Home: React.FC = () => {
-  const [input, setInput] = useState<string>('')
+const Dashboard: React.FC = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  async function login() {
+    const res = await loginUser(username, password)
+    console.log(`${res ? 'Login success' : 'Login failed'}`)
+  }
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>First Programming Assignment</IonTitle>
+          <IonTitle>Dashboard</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -18,16 +25,10 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />      
-        <IonButton routerLink="/login">
-          click to login :D
-        </IonButton>
-        <IonButton routerLink="/register">
-          register ..
-        </IonButton>
+      <p>Hellooo</p>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Home;
+export default Dashboard;
