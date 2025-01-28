@@ -19,10 +19,10 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <ExploreContainer />      
-        <IonButton routerLink="/login">
+        <IonButton routerLink="/login" shape="round">
           click to login :D
         </IonButton>
-        <IonButton routerLink="/register">
+        <IonButton routerLink="/register" shape="round">
           register ..
         </IonButton>
       </IonContent>
